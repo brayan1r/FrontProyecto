@@ -1,0 +1,95 @@
+<div class="about-container">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>Nuestra Historia</h1>
+      <p>Conectando el campo con tu mesa desde 2020</p>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-content">
+        <div class="story-text">
+          <h2>De la Tierra a Tu Mesa</h2>
+          <p>Sabor del Campo nació de la pasión por la agricultura sostenible y el deseo de llevar productos frescos y orgánicos directamente a los hogares. Nuestra misión es conectar a los agricultores locales con consumidores conscientes que valoran la calidad y la sostenibilidad.</p>
+          <p>Con más de 5 años de experiencia, hemos construido una red de agricultores comprometidos con prácticas agrícolas responsables y sostenibles.</p>
+        </div>
+        <div class="story-image">
+          <img src="assets/images/farm.jpg" alt="Nuestra granja">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <h2>Nuestros Valores</h2>
+      <div class="values-grid">
+        <div class="value-card" *ngFor="let value of values">
+          <i class="fas fa-{{value.icon}}"></i>
+          <h3>{{value.title}}</h3>
+          <p>{{value.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <h2>Nuestro Equipo</h2>
+      <div class="team-grid">
+        <div class="team-card" *ngFor="let member of teamMembers">
+          <div class="member-image">
+            <img [src]="member.image" [alt]="member.name">
+          </div>
+          <div class="member-info">
+            <h3>{{member.name}}</h3>
+            <span class="position">{{member.position}}</span>
+            <p>{{member.description}}</p>
+            <div class="social-links">
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>5+</h3>
+          <p>Años de Experiencia</p>
+        </div>
+        <div class="stat-card">
+          <h3>100+</h3>
+          <p>Agricultores Asociados</p>
+        </div>
+        <div class="stat-card">
+          <h3>10,000+</h3>
+          <p>Clientes Satisfechos</p>
+        </div>
+        <div class="stat-card">
+          <h3>50+</h3>
+          <p>Productos Orgánicos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Listo para probar nuestros productos?</h2>
+      <p>Únete a nuestra comunidad de consumidores conscientes</p>
+      <button class="btn btn-light">Explorar Productos</button>
+    </div>
+  </section>
+</div>

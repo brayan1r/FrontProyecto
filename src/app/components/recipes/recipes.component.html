@@ -1,0 +1,73 @@
+<div class="recipes-container">
+  <!-- Header Section -->
+  <section class="recipe-header">
+    <div class="container">
+      <h1>Nuestras Recetas</h1>
+      <p>Descubre deliciosas recetas saludables con nuestros productos frescos</p>
+    </div>
+  </section>
+
+  <!-- Recipe Categories -->
+  <section class="recipe-categories">
+    <div class="container">
+      <div class="category-pills">
+        <button class="pill active">Todas</button>
+        <button class="pill">Ensaladas</button>
+        <button class="pill">Sopas</button>
+        <button class="pill">Platos Principales</button>
+        <button class="pill">Postres</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recipe Grid -->
+  <section class="recipe-grid">
+    <div class="container">
+      <div class="recipes-wrapper">
+        <div class="recipe-card" *ngFor="let recipe of recipes">
+          <div class="recipe-image">
+            <img [src]="recipe.image" [alt]="recipe.title">
+            <div class="recipe-category">{{recipe.category}}</div>
+          </div>
+          <div class="recipe-content">
+            <h3>{{recipe.title}}</h3>
+            <p>{{recipe.description}}</p>
+            <div class="recipe-meta">
+              <span><i class="fas fa-clock"></i> {{recipe.time}}</span>
+              <span><i class="fas fa-signal"></i> {{recipe.difficulty}}</span>
+            </div>
+            <button class="btn btn-primary">Ver Receta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Recipe -->
+  <section class="featured-recipe">
+    <div class="container">
+      <div class="featured-content">
+        <div class="featured-text">
+          <h2>Receta Destacada</h2>
+          <h3>Ensalada de Temporada</h3>
+          <p>Descubre nuestra deliciosa ensalada preparada con productos frescos de temporada, perfecta para una comida saludable y llena de sabor.</p>
+          <button class="btn btn-light">Ver Receta Completa</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="recipe-newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>¿Te gustan nuestras recetas?</h2>
+        <p>Suscríbete para recibir nuevas recetas cada semana</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Tu correo electrónico" class="form-control">
+          <button type="submit" class="btn btn-success">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

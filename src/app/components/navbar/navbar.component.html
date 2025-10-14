@@ -1,0 +1,111 @@
+<header class="header">
+  <!-- Top Bar con información de contacto y redes sociales -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-content">
+        <div class="contact-info">
+          <a href="tel:+123456789"><i class="fas fa-phone-alt"></i> +1 (234) 567-89</a>
+          <a href="mailto:info@sabordelcampo.com"><i class="fas fa-envelope"></i> info@sabordelcampo.com</a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de navegación principal -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="Sabores del Campo Logo" class="navbar-logo">
+        <span class="brand-text">
+          <span class="brand-title">Sabor del Campo</span>
+          <span class="brand-subtitle">Productos Frescos & Orgánicos</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              <i class="fas fa-home"></i> Inicio
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-apple-alt"></i> Productos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/frutas"><i class="fas fa-apple-alt"></i> Frutas</a></li>
+              <li><a class="dropdown-item" routerLink="/verduras"><i class="fas fa-carrot"></i> Verduras</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="/organicos"><i class="fas fa-seedling"></i> Orgánicos</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ofertas" routerLinkActive="active">
+              <i class="fas fa-tags"></i> Ofertas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/recetas" routerLinkActive="active">
+              <i class="fas fa-utensils"></i> Recetas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/nosotros" routerLinkActive="active">
+              <i class="fas fa-users"></i> Nosotros
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contacto" routerLinkActive="active">
+              <i class="fas fa-envelope"></i> Contacto
+            </a>
+          </li>
+        </ul>
+
+        <!-- Botones de acción -->
+        <div class="nav-actions">
+          <button class="btn-search" (click)="toggleSearch()" aria-label="Buscar">
+            <i class="fas fa-search"></i>
+          </button>
+          <a class="btn-cart" routerLink="/carrito">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" *ngIf="cartItemCount > 0">{{cartItemCount}}</span>
+          </a>
+          <div class="auth-buttons">
+            <a routerLink="/login" class="btn btn-login">Iniciar Sesión</a>
+            <a routerLink="/register" class="btn btn-register">Registrarse</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Barra de búsqueda expandible -->
+  <div class="search-bar" [class.active]="isSearchActive">
+    <div class="container">
+      <form class="search-form" (submit)="onSearch($event)">
+        <input type="text" 
+               placeholder="¿Qué estás buscando?" 
+               [(ngModel)]="searchQuery" 
+               name="search"
+               (keyup.escape)="closeSearch()">
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+        <button type="button" class="close-search" (click)="closeSearch()">
+          <i class="fas fa-times"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</header>

@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: 'recetas',
-    loadComponent: () => import('./components/recipes/recipes.component').then(m => m.RecipesComponent)
+    loadComponent: () => import('./components/recipes/recipes.component').then(m  => m.RecipesComponent)
   },
   {
     path: 'nosotros',
@@ -24,5 +24,9 @@ export const routes: Routes = [
   {
     path: 'register',
     loadComponent: () => import('./components/auth/register/register.component').then(m => m.RegisterComponent)
+  },
+  {
+    path: 'frutas',
+    loadComponent: () => import('./components/products/frutas/frutas').then(m => m.FrutasComponent)
   }
 ];

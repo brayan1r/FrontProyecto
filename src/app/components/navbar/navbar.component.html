@@ -15,12 +15,14 @@
       </div>
     </div>
   </div>
-
   <!-- Barra de navegación principal -->
   <nav class="navbar navbar-expand-lg">
+    <div>
+         <img class="navbar-logo" src="assets/logoSdC.png" alt="LOGO">
+    </div>
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="../../assets/images/" alt="Sabores del Campo Logo" class="navbar-logo">
+        <!-- <img src="../../assets/images/" alt="Sabores del Campo Logo" class="navbar-logo"> -->
         <span class="brand-text">
           <span class="brand-title">Sabor del Campo</span>
           <span class="brand-subtitle">Productos Frescos & Orgánicos</span>
@@ -46,7 +48,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/frutas"><i class="fas fa-apple-alt"></i> Frutas</a></li>
               <li><a class="dropdown-item" routerLink="/verduras"><i class="fas fa-carrot"></i> Verduras</a></li>
-       
+
             </ul>
           </li>
           <li class="nav-item">
@@ -93,9 +95,9 @@
   <div class="search-bar" [class.active]="isSearchActive">
     <div class="container">
       <form class="search-form" (submit)="onSearch($event)">
-        <input type="text" 
-               placeholder="¿Qué estás buscando?" 
-               [(ngModel)]="searchQuery" 
+        <input type="text"
+               placeholder="¿Qué estás buscando?"
+               [(ngModel)]="searchQuery"
                name="search"
                (keyup.escape)="closeSearch()">
         <button type="submit">

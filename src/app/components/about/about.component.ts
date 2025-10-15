@@ -13,7 +13,7 @@ export class AboutComponent {
     {
       name: 'David Quintero',
       position: 'Fundador & CEO',
-      image: 'assets/images/team-1.jpg',
+      image: 'https://i0.wp.com/www.nancy.cc/wp-content/uploads/2022/10/caillou-new.png?ssl=1',
       description: ''
     },
     {

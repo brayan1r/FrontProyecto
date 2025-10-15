@@ -70,6 +70,38 @@ export class FrutasComponent {
       category: 'Frutas',
       unit: 'kg'
     },
+    {
+      name: 'Limon',
+      image: 'https://colgreens.com.co/wp-content/uploads/2020/11/fruta-limon.jpg',
+      price: 2800,
+      description: 'limon fresco y jugoso.',
+      category: 'Frutas',
+      unit: 'kg'
+    },
+    {
+      name: 'Guayaba',
+      image: 'https://www.gob.mx/cms/uploads/article/main_image/88898/Untitled-1.jpg',
+      price: 4000,
+      description: 'Guayabas frescas y aromáticas, ricas en vitamina C.',
+      category: 'Frutas',
+      unit: 'kg'
+    },
+    {
+      name: 'Maracuyá',
+      image: 'https://actualfruveg.com/wp-content/uploads/2022/03/bea-maracuya-2c.jpg',
+      price: 90000,
+      description: 'Maracuyás exóticas y sabrosas, perfectas para jugos y postres.',
+      category: 'Frutas',
+      unit: 'kg'
+    },
+    {
+      name: 'Pera',
+      image: 'https://images.ecestaticos.com/nxBuaPgs1ByqKBYRiHV0DHWwiak=/0x0:1254x836/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fdc2%2F8a6%2Faea%2Fdc28a6aea4bdcc38fd8ede40b8832ae5.jpg',
+      price: 6500,
+      description: 'peras frescas y jugosas, ideales para ensaladas y postres.',
+      category: 'Frutas',
+      unit: 'kg'
+    },
     ];
 }
 

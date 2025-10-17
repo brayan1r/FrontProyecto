@@ -19,7 +19,7 @@ export class AboutComponent {
     {
       name: 'David Rodriguez',
       position: 'Co-Fundador & CTO',
-      image: 'assets/images/team-2.jpg',
+      image: 'assets/DaviDB.jpeg',
       description: ''
     }
   ];

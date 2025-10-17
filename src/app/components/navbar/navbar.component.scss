@@ -82,9 +82,10 @@ $tertiary-color: rgb(255, 255, 255);
     }
 
     .brand-title {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: bold;
       line-height: 1.2;
+      font-family: 'lobter', cursive;
     }
 
     .brand-subtitle {
@@ -105,6 +106,9 @@ $tertiary-color: rgb(255, 255, 255);
     &:focus {
       box-shadow: none;
     }
+  }
+  .dropdown-toggle::after {
+    display: none; // Oculta el icono de flecha predeterminado
   }
 
   .navbar-nav {

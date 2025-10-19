@@ -1,3 +1,4 @@
+@use 'sass:color';
 .login-container {
   min-height: 100vh;
   display: flex;
@@ -118,7 +119,7 @@
       transition: all 0.3s ease;
 
       &:hover:not(:disabled) {
-        background-color: darken(#2E7D32, 10%);
+        background-color: color.scale(#2E7D32, $lightness: -10%);
       }
 
       &:disabled {
@@ -194,7 +195,7 @@
           color: white;
 
           &:hover {
-            background-color: darken(#1877f2, 10%);
+            background-color: color.scale(#1877f2, $lightness: -10%);
           }
         }
       }

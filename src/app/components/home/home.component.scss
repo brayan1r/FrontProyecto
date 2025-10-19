@@ -1,3 +1,4 @@
+@use 'sass:color';
 .home-container {
   .hero {
     height: 80vh;
@@ -25,6 +26,10 @@
 
       .hero-buttons {
         .btn {
+          background-color:white;
+          color: #2E7D32;
+          border-bottom: #2E7D32;
+          font-weight:800px ;
           margin: 0.5rem;
           padding: 0.75rem 2rem;
           font-size: 1.1rem;
@@ -181,7 +186,7 @@
             }
 
             &:hover {
-              background-color: darken(#2E7D32, 5%);
+              background-color: color.scale(#2E7D32, $lightness: -5%);
             }
           }
         }
@@ -225,8 +230,11 @@
   .newsletter {
     background-color: #2E7D32;
     color: white;
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
 
     h2 {
       margin-bottom: 1rem;
@@ -257,7 +265,7 @@
         font-weight: bold;
 
         &:hover {
-          background-color: darken(#A5D6A7, 10%);
+          background-color: color.scale(#A5D6A7, $lightness: -10%);
         }
       }
     }

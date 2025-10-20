@@ -109,13 +109,8 @@ $tertiary-color: rgb(255, 255, 255);
       box-shadow: none;
     }
   }
-<<<<<<< HEAD
   .dropdown-toggle::after{
     content: none;
-=======
-  .dropdown-toggle::after {
-    display: none; // Oculta el icono de flecha predeterminado
->>>>>>> 5ffe68d5b9a6b9a5989ecd7df465c58280b80466
   }
 
   .navbar-nav {

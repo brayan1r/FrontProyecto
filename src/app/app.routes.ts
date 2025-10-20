@@ -6,10 +6,6 @@ export const routes: Routes = [
     loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent)
   },
   {
-    path: 'recetas',
-    loadComponent: () => import('./components/recipes/recipes.component').then(m  => m.RecipesComponent)
-  },
-  {
     path: 'nosotros',
     loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent)
   },
@@ -28,5 +24,9 @@ export const routes: Routes = [
   {
     path: 'frutas',
     loadComponent: () => import('./components/products/frutas/frutas').then(m => m.FrutasComponent)
+  },
+  {
+    path: 'verduras',
+    loadComponent: () => import('./components/products/verduras/verduras').then(m => m.VerdurasComponent)
   }
 ];

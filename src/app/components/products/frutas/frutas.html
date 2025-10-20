@@ -1,1 +1,75 @@
-<p>frutas works!</p>
+<div class="home-container">
+  <!-- Hero Section -->
+
+
+  <!-- Featured Products -->
+  <section class="frutas-container">
+    <div class="container">
+      <h2>Frutas</h2>
+      <div class="products-grid">
+        <div class="product-card" *ngFor="let product of frutas">
+          <div class="product-image">
+            <img [src]="product.image" [alt]="product.name">
+            <div class="product-badge">Destacado</div>
+          </div>
+          <div class="product-info">
+            <h3>{{product.name}}</h3>
+            <p>{{product.description}}</p>
+            <span class="price">
+              <span class="currency">$</span>
+              <span class="amount">{{product.price | number:'1.0-0'}}</span>
+              <span class="unit">/kg</span>
+            </span>
+            <div class="product-actions">
+              <button class="btn btn-outline-success btn-sm">
+                <i class="fas fa-heart"></i>
+              </button>
+              <button class="btn btn-success">
+                <i class="fas fa-shopping-cart"></i>
+                Añadir al Carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits">
+    <div class="container">
+      <h2>¿Por qué elegirnos?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fas fa-leaf"></i>
+          <h3>100% Orgánico</h3>
+          <p>Productos cultivados sin pesticidas ni químicos dañinos</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-truck"></i>
+          <h3>Entrega Rápida</h3>
+          <p>Entrega a domicilio el mismo día en tu zona</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-heart"></i>
+          <h3>Calidad Garantizada</h3>
+          <p>Satisfacción garantizada en cada producto</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+</div>
+<div class="newsletter-2">
+    <section class="newsletter">
+    <div class="container">
+      <h2>¡Mantente Informado!</h2>
+      <p>Suscríbete para recibir ofertas especiales y noticias sobre productos frescos</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Tu correo electrónico" class="form-control">
+        <button type="submit" class="btn btn-primary">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+</div>

@@ -1,24 +1,38 @@
 // Variables
+@use 'sass:color';
 $primary-color: #2E7D32;
 $secondary-color: #A5D6A7;
 $white: #ffffff;
 $light-gray: #f8f9fa;
 $dark-gray: #343a40;
 $transition-speed: 0.3s;
+$tertiary-color: rgb(255, 255, 255);
 
+<<<<<<< HEAD
   .navbar-logo {
     height: 50px;       // controla el tamaño del logo
     width: auto;        // mantiene las proporciones
     object-fit: contain;
     margin-right: 10px;
     padding-left: 20px;
+=======
+.navbar-logo {
+    height: 120px;       // controla el tamaño del logo
+    width: auto;        // mantiene las proporciones
+    object-fit: contain;
+    margin-left: calc(-7vw + 50%);
+    padding-right: 20px;
+>>>>>>> main
   }
 // Mixins
 @mixin hover-effect {
 
+<<<<<<< HEAD
 // Navbar Logo
 
 
+=======
+>>>>>>> main
   transition: all $transition-speed ease;
   &:hover {
     color: $secondary-color;
@@ -27,7 +41,7 @@ $transition-speed: 0.3s;
 
 // Top Bar Styles
 .top-bar {
-  background-color: darken($primary-color, 10%);
+  background-color: color.adjust($primary-color, $lightness: -10%);
   padding: 0.5rem 0;
   font-size: 0.9rem;
 
@@ -62,8 +76,9 @@ $transition-speed: 0.3s;
 // Navbar Styles
 .navbar {
   background-color: $primary-color;
-  padding: 1rem 0;
+  // padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 100px;
 
   .navbar-brand {
     display: flex;
@@ -84,9 +99,10 @@ $transition-speed: 0.3s;
     }
 
     .brand-title {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: bold;
       line-height: 1.2;
+      font-family: 'lobter', cursive;
     }
 
     .brand-subtitle {
@@ -108,6 +124,9 @@ $transition-speed: 0.3s;
       box-shadow: none;
     }
   }
+  .dropdown-toggle::after{
+    content: none;
+  }
 
   .navbar-nav {
     .nav-item {
@@ -116,8 +135,9 @@ $transition-speed: 0.3s;
     }
 
     .nav-link {
+      display: grid;
       color: $white;
-      padding: 0.5rem 1rem;
+      // padding: 0.5rem 1rem;
       font-weight: 500;
       @include hover-effect;
 
@@ -156,6 +176,7 @@ $transition-speed: 0.3s;
           color: $primary-color;
         }
       }
+
     }
   }
 }
@@ -165,6 +186,7 @@ $transition-speed: 0.3s;
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-right: calc(-10vw + 10%);
 
   .btn-search, .btn-cart {
     background: none;
@@ -218,12 +240,12 @@ $transition-speed: 0.3s;
       }
 
       &.btn-register {
-        background-color: $secondary-color;
+        background-color: $tertiary-color;
         color: $primary-color;
         border: none;
 
         &:hover {
-          background-color: darken($secondary-color, 5%);
+          background-color: color.adjust($secondary-color, $lightness: -5%);
         }
       }
     }
@@ -233,17 +255,20 @@ $transition-speed: 0.3s;
 // Search Bar Styles
 .search-bar {
   background-color: $white;
-  padding: 1rem 0;
+  // padding: 1rem 0;
   position: absolute;
-  width: 100%;
+  width: 35%;
   top: -100%;
   left: 0;
   z-index: 1000;
-  transition: top $transition-speed ease;
+  // transition: top $transition-speed ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
 
   &.active {
-    top: 100%;
+    top: 11%;
+    left:33%;
+    border: solid 2px greenyellow;
   }
 
   .search-form {
@@ -253,10 +278,14 @@ $transition-speed: 0.3s;
 
     input {
       width: 100%;
-      padding: 1rem;
+      padding: .3rem;
       border: 2px solid $light-gray;
-      border-radius: 5px;
+      border-radius: 30px;
       font-size: 1rem;
+<<<<<<< HEAD
+=======
+      border: none;
+>>>>>>> main
 
       &:focus {
         outline: none;
@@ -267,14 +296,16 @@ $transition-speed: 0.3s;
     button {
       background: none;
       border: none;
-      color: $dark-gray;
+      color: rgb(125, 117, 117);
       padding: 0 1rem;
       cursor: pointer;
       @include hover-effect;
 
       &.close-search {
         position: absolute;
-        right: 0;
+        right: -5%;
+        top:-70%;
+
       }
     }
   }
@@ -282,6 +313,12 @@ $transition-speed: 0.3s;
 
 // Responsive Styles
 @media (max-width: 991px) {
+
+  .navbar-logo {
+    height: 80px;       // controla el tamaño del logo
+    width: auto;        // mantiene las proporciones
+    object-fit: contain;
+  }
   .top-bar {
     .contact-info {
       display: none;
@@ -294,16 +331,21 @@ $transition-speed: 0.3s;
 
   .navbar {
     .navbar-brand {
+      .brand-title{
+          font-size: 1.2rem;
+          padding: 20px 0 32px 50px;
+        }
       .brand-subtitle {
         display: none;
       }
     }
 
     .navbar-collapse {
-      background-color: darken($primary-color, 5%);
-      margin: 1rem -1rem -1rem;
+      background-color: color.adjust($primary-color, $lightness: -5%);
+      margin: -1rem -1rem -1rem;
       padding: 1rem;
       border-radius: 5px;
+      transition: width 0.3s, height 0.3s, background-color 0.3s;
     }
 
     .nav-actions {
@@ -311,4 +353,61 @@ $transition-speed: 0.3s;
       justify-content: center;
     }
   }
+<<<<<<< HEAD
+=======
+  .search-bar {
+  background-color: $white;
+  // padding: 1rem 0;
+  position: absolute;
+  width: 35%;
+  top: -100%;
+  left: 0;
+  z-index: 1000;
+  // transition: top $transition-speed ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+
+  &.active {
+    top: 11%;
+    left:33%;
+    border: solid 2px greenyellow;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: .3rem;
+      border: 2px solid $light-gray;
+      border-radius: 30px;
+      font-size: 1rem;
+      border: none;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: rgb(125, 117, 117);
+      padding: 0 1rem;
+      cursor: pointer;
+      @include hover-effect;
+
+      &.close-search {
+        position: absolute;
+        right: -5%;
+        top:-70%;
+
+      }
+    }
+  }
+}
+>>>>>>> main
 }

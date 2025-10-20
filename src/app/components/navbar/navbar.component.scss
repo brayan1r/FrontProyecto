@@ -14,7 +14,8 @@ $tertiary-color: rgb(255, 255, 255);
     object-fit: contain;
     margin-left: calc(-7vw + 50%);
     padding-right: 20px;
-  }
+}
+
 // Mixins
 @mixin hover-effect {
 
@@ -23,9 +24,9 @@ $tertiary-color: rgb(255, 255, 255);
     color: $secondary-color;
   }
 }
-
 // Top Bar Styles
 .top-bar {
+
   background-color: color.adjust($primary-color, $lightness: -10%);
   padding: 0.5rem 0;
   font-size: 0.9rem;
@@ -117,6 +118,7 @@ $tertiary-color: rgb(255, 255, 255);
     .nav-item {
       position: relative;
       margin: 0 0.3rem;
+      padding-top: 20% ;
     }
 
     .nav-link {
@@ -293,6 +295,13 @@ $tertiary-color: rgb(255, 255, 255);
   }
 }
 
+@media (max-width: 1234px) {
+  .navbar-logo {
+    height: 80px;       // controla el tamaño del logo
+    width: auto;        // mantiene las proporciones
+    object-fit: contain;
+  }
+}
 // Responsive Styles
 @media (max-width: 991px) {
 
@@ -316,6 +325,104 @@ $tertiary-color: rgb(255, 255, 255);
       .brand-title{
           font-size: 1.2rem;
           padding: 20px 0 32px 50px;
+        }
+      .brand-subtitle {
+        display: none;
+      }
+    }
+
+    .navbar-collapse {
+      background-color: color.adjust($primary-color, $lightness: -5%);
+      margin: -1rem -1rem -1rem;
+      padding: 1rem;
+      border-radius: 5px;
+      transition: width 0.3s, height 0.3s, background-color 0.3s;
+    }
+
+    .nav-actions {
+      margin-top: 1rem;
+      justify-content: center;
+    }
+  }
+  .search-bar {
+  background-color: $white;
+  // padding: 1rem 0;
+  position: absolute;
+  width: 35%;
+  top: -100%;
+  left: 0;
+  z-index: 1000;
+  // transition: top $transition-speed ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+
+  &.active {
+    top: 11%;
+    left:33%;
+    border: solid 2px greenyellow;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: .3rem;
+      border: 2px solid $light-gray;
+      border-radius: 30px;
+      font-size: 1rem;
+      border: none;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: rgb(125, 117, 117);
+      padding: 0 1rem;
+      cursor: pointer;
+      @include hover-effect;
+
+      &.close-search {
+        position: absolute;
+        right: -5%;
+        top:-70%;
+
+      }
+    }
+  }
+}
+}
+@media (max-width: 430px) {
+
+  .navbar-logo {
+    height: 90px;       // controla el tamaño del logo
+    width: auto;        // mantiene las proporciones
+    object-fit: contain;
+    padding-top: 0;
+  }
+  .top-bar {
+    .contact-info {
+      display: none;
+    }
+
+    .social-links {
+      margin: 0 auto;
+    }
+  }
+
+  .navbar {
+    .navbar-brand {
+      .brand-title{
+          font-size: 1.2rem;
+          padding: 10px 0 0 20px;
+          font-family: math;
         }
       .brand-subtitle {
         display: none;

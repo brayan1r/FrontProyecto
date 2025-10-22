@@ -102,6 +102,7 @@ export class FrutasComponent {
       category: 'Frutas',
       unit: 'kg'
     },
+    
     ];
 }
 

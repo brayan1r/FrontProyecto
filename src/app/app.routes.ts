@@ -15,11 +15,11 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./components/auth/login/login.component').then(m => m.LoginComponent)
+    loadComponent: () => import('./components/auth/pages/login/login.component').then(m => m.LoginComponent)
   },
   {
     path: 'register',
-    loadComponent: () => import('./components/auth/register/register.component').then(m => m.RegisterComponent)
+    loadComponent: () => import('./components/auth/pages/register/register.component').then(m => m.RegisterComponent)
   },
   {
     path: 'frutas',

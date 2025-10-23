@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
   loginForm: FormGroup;
   hidePassword = true;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -25,8 +26,16 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Login form submitted:', this.loginForm.value);
-      // Aquí iría la lógica de autenticación
+      const { email, password } = this.loginForm.value;
+      const success = this.authService.loginMock(email, password);
+
+      if (success) {
+        this.router.navigate(['/home']);
+      } else {
+        alert('Credenciales incorrectas');
+      }
+    } else {
+      alert('Formulario inválido');
     }
   }
 
@@ -34,3 +43,4 @@ export class LoginComponent {
     this.router.navigate(['/register']);
   }
 }
+

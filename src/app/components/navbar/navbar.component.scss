@@ -88,12 +88,7 @@ $tertiary-color: rgb(255, 255, 255);
       font-size: 1.7rem;
       font-weight: bold;
       line-height: 1.2;
-      font-family: 'lobter', cursive;
-    }
-
-    .brand-subtitle {
-      font-size: 0.8rem;
-      opacity: 0.9;
+      font-family:serif;
     }
 
     &:hover .brand-icon {
@@ -300,6 +295,7 @@ $tertiary-color: rgb(255, 255, 255);
     height: 120px;       // controla el tamaño del logo
     width: auto;        // mantiene las proporciones
     object-fit: contain;
+    padding-left:-30px;
   }
   .navbar {
     .navbar-brand {

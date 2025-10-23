@@ -89,7 +89,7 @@ export class FrutasComponent {
     {
       name: 'Maracuyá',
       image: 'https://actualfruveg.com/wp-content/uploads/2022/03/bea-maracuya-2c.jpg',
-      price: 90000,
+      price: 5000,
       description: 'Maracuyás exóticas y sabrosas, perfectas para jugos y postres.',
       category: 'Frutas',
       unit: 'kg'
@@ -102,6 +102,7 @@ export class FrutasComponent {
       category: 'Frutas',
       unit: 'kg'
     },
+    
     ];
 }
 
